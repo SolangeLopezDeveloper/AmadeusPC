@@ -3,7 +3,7 @@ const cardsContainer = $('#card-box-container')
 const clearCart = $('#clear-cart')
 const btnBuy = $('#btn-buy')
 const outputTotal = $('#output-total')
-const URL_API_SERVER = 'http://localhost:3000'
+const URL_API_SERVER = 'https://amadeuspc-production.up.railway.app'
 
 const getOrder = () => {
   return fetch(`${URL_API_SERVER}/api/cart/getOrderPending`, {

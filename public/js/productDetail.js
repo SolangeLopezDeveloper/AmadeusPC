@@ -1,5 +1,5 @@
 const btnAddCart = document.querySelector('#btn-addCart')
-const URL_API_SERVER = 'http://localhost:3000'
+const URL_API_SERVER = 'https://amadeuspc-production.up.railway.app'
 
 btnAddCart.addEventListener('click', async () =>{
     const id = btnAddCart.getAttribute('data-id')

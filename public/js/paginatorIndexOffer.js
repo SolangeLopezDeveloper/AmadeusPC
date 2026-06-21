@@ -2,7 +2,7 @@ const bttnPrev = document.querySelector(".control-prev");
 const bttnNext = document.querySelector(".control-next");
 const containerOfferCard = document.querySelector("#container-offer-card");
 /* const idUser = document.body.getAttribute("data-idUser");
-const URL_API_SERVER = "http://localhost:3000/api" */
+const URL_API_SERVER = "https://amadeuspc-production.up.railway.app/api" */
 
 let firstProducto = 0;
 let lastProducto = 4;
@@ -17,7 +17,7 @@ if(windowWidth > 425 && windowWidth < 769){
   lastProducto = 3;
 }
 
-const apiGetOfferProductos = "http://localhost:3000/api/productos/offer";
+const apiGetOfferProductos = "https://amadeuspc-production.up.railway.app/api/productos/offer";
 
 const getOfferProductos = () =>
   fetch(apiGetOfferProductos).then((res) => res.json());
@@ -135,7 +135,7 @@ bttnPrev.addEventListener("click", async () => {
 };
 
 const getFavorites = () => {
-  return fetch('http://localhost:3000/api/favorites').then((res) => res.json());
+  return fetch('https://amadeuspc-production.up.railway.app/api/favorites').then((res) => res.json());
 };
 
 const toggleFavorite = async (id,{target}) => {
@@ -150,7 +150,7 @@ const toggleFavorite = async (id,{target}) => {
     return
   }
       const objProductId = {idProduct: id};
-      const { ok, data: {isRemove}} = await fetch('http://localhost:3000/api/favorites/toggle', {
+      const { ok, data: {isRemove}} = await fetch('https://amadeuspc-production.up.railway.app/api/favorites/toggle', {
         method: "POST",
         body: JSON.stringify(objProductId),
         headers: {

@@ -1,6 +1,6 @@
 const $ = (el) => document.querySelector(el)
 const cardsCompra = $('#card-compra')
-const URL_API_SERVER = 'http://localhost:3000'
+const URL_API_SERVER = 'https://amadeuspc-production.up.railway.app'
 
 const getOrders = () => {
     return fetch(`${URL_API_SERVER}/api/orders`,{

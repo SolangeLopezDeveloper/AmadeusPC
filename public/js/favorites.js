@@ -1,9 +1,9 @@
 console.log("Favoritos vinculado!");
 const cardContainer = document.querySelector('#cards-container');
-const URL_API_SERVER = "http://localhost:3000/api";
+const URL_API_SERVER = "https://amadeuspc-production.up.railway.app/api";
 
 const getFavorites = () => {
-    return fetch('http://localhost:3000/api/favorites').then((res)=> res.json());
+    return fetch('https://amadeuspc-production.up.railway.app/api/favorites').then((res)=> res.json());
 
 }
 
@@ -55,7 +55,7 @@ const addProductToCart = async (id) =>{
         const objProductId={
             idProduct: id
         }
-        const {ok} = await fetch('http://localhost:3000/api/cart/addProduct',{
+        const {ok} = await fetch('https://amadeuspc-production.up.railway.app/api/cart/addProduct',{
             method: "POST",
             body: JSON.stringify(objProductId),
             headers: {
@@ -87,7 +87,7 @@ const toggleFavorite = async (id) => {
   
       if (result.isConfirmed) {
         const objProductId = {idProduct: id}
-        const { ok } = await fetch('http://localhost:3000/api/favorites/toggle', {
+        const { ok } = await fetch('https://amadeuspc-production.up.railway.app/api/favorites/toggle', {
           method: "POST",
           body: JSON.stringify(objProductId),
           headers: {
