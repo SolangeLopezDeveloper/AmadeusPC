@@ -3,6 +3,9 @@
     padding-top: 70px;
     font-family: var(--tipografiaForms);
     text-align: center;
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    min-height: 100vh;
 }
 
 .login--titulo {
@@ -11,17 +14,16 @@
     font-size: 1.5rem;
     text-align: center;
     margin: 15px;
+    color: var(--color-text-primary);
 }
 
 .login--subtitulo {
-    color: var(--colorAzul);
+    color: var(--color-accent);
     text-align: center;
     margin: 0 auto 30px;
 }
 
-.login--subtitulo::first-letter {
-    text-transform: uppercase;
-}
+.login--subtitulo::first-letter { text-transform: uppercase; }
 
 .login__form {
     display: flex;
@@ -32,53 +34,49 @@
     flex-direction: column;
 }
 
-.login__form div {
-    position: relative;
-    margin: 10px auto;
-}
+.login__form div { position: relative; margin: 10px auto; }
 
-.login__form--email, .login__form--password {
-    width: 95%;
-}
+.login__form--email, .login__form--password { width: 95%; }
 
 .login__form div input {
     width: 100%;
     margin: 10px auto;
     border-style: none;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid var(--color-border);
     font-family: var(--tipografiaForms);
-    font-size: 1rem
+    font-size: 1rem;
+    background: transparent;
+    color: var(--color-text-primary);
 }
 
 .login__form div input:focus {
-    outline : none;
-    border-bottom: 2px solid var(--colorAzul);
+    outline: none;
+    border-bottom: 2px solid var(--color-accent);
 }
 
 .login__form__button--entrar {
     margin: 10px 25%;
-    padding: 5px 2px;
+    padding: 8px 2px;
     font-size: 14px;
     color: white;
-    background: lightskyblue;
+    background: var(--gradient-btn);
     border: none;
     border-radius: 5px;
-    transition: 1s all;
+    transition: opacity 0.2s ease;
     cursor: pointer;
     text-transform: uppercase;
     width: 50%;
     letter-spacing: 1px;
 }
 
-.login__form__button--entrar:hover {
-    background: linear-gradient(#dee5ff,lightskyblue);
-}
+.login__form__button--entrar:hover { opacity: 0.85; }
 
 .login__form--forgetPass {
     margin: 0 auto 5px;
     font-size: 0.8rem;
     text-align: center;
     width: 100%;
+    color: var(--color-text-muted);
 }
 
 .login__form--registrarse {
@@ -86,45 +84,42 @@
     font-size: 1rem;
     width: 100%;
     text-align: center;
+    color: var(--color-text-secondary);
 }
 
 .login__form div label:not(.form__main__recordar--container__switch) {
-    color: #AAA;
+    color: var(--color-text-muted);
     position: absolute;
     top: 14px;
     transition: 0.5s;
     z-index: 0;
 }
 
-.login__form div label:hover {
-    cursor: text;
-}
+.login__form div label:hover { cursor: text; }
 
 .login__main .login__form div .divFocus {
     top: 0px;
     font-size: 12px;
-    color: var(--colorAzul);
+    color: var(--color-accent);
 }
 
 .login__form div .errors {
     position: absolute;
-    color: red;
+    color: #ff4d4d;
     font-size: 12px;
     left: 0;
     top: 32px;
     margin-top: 0;
 }
 
-.login__form div ul li {
-    margin-left: 0px;
-}
+.login__form div ul li { margin-left: 0px; }
 
 .buttonLogin-submit {
     margin: 10px 25%;
     padding: 5px 2px;
     font-size: 14px;
-    color: #CCC;
-    background: #BBB;
+    color: var(--color-text-muted);
+    background: var(--color-border);
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -139,7 +134,7 @@
     display: flex;
     font-weight: 500;
     margin-bottom: 16px;
-    color: #656880;
+    color: var(--color-text-secondary);
 }
 
 .form__main__recordar--container__switch-input {
@@ -155,12 +150,12 @@
 .form__main__recordar--container__switch-input:not([disabled]):active + .form__main__recordar--container__switch-track,
 .form__main__recordar--container__switch-input:not([disabled]):focus + .form__main__recordar--container__switch-track {
     border: 1px solid transparent;
-    box-shadow: 0px 0px 0px 2px var(--colorCeleste);
+    box-shadow: 0px 0px 0px 2px var(--color-accent);
 }
 
 .form__main__recordar--container__switch-track {
-    background: rgb(231, 230, 255);
-    border: 1px solid var(--colorAzul);
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-accent-secondary);
     border-radius: 100px;
     cursor: pointer;
     display: flex;
@@ -172,13 +167,11 @@
 
 .form__main__recordar--container__switch-indicator {
     align-items: center;
-    background: var(--colorAzul);
+    background: var(--color-accent);
     border-radius: 24px;
     bottom: 2px;
     display: flex;
     height: 14px;
-    left: 5px;
-    content: center;
     left: 2px;
     outline: solid 2px transparent;
     position: absolute;
@@ -187,35 +180,22 @@
 }
 
 .form__main__recordar--container__switch-input:checked + .form__main__recordar--container__switch-track .form__main__recordar--container__switch-indicator {
-    background: var(--colorAzul);
-	transform: translateX(10px);
+    background: var(--color-accent);
+    transform: translateX(10px);
 }
 
 .form__main__recordar--container__switch-checkMark {
     fill: #fff;
-	height: 15px;
-	width: 15px;
-	opacity: 0;
-	transition: opacity 0.25s ease-in-out;
+    height: 15px;
+    width: 15px;
+    opacity: 0;
+    transition: opacity 0.25s ease-in-out;
 }
 
 .form__main__recordar--container__switch-input:checked + .form__main__recordar--container__switch-track .form__main__recordar--container__switch-checkMark {
     opacity: 1;
-	transition: opacity 0.25s ease-in-out;
+    transition: opacity 0.25s ease-in-out;
 }
 
-@media (min-width: 426px) {
-    .login__form {
-        width: 70%;
-    }
-}
-
-@media (min-width: 769px) {
-    .login__form {
-        width: 40%;
-    }
-
-    .login__main {
-        padding-top: 80px;
-    }
-}
+@media (min-width: 426px) { .login__form { width: 70%; } }
+@media (min-width: 769px) { .login__form { width: 40%; } .login__main { padding-top: 80px; } }

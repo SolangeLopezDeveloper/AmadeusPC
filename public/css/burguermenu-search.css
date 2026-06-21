@@ -1,156 +1,92 @@
 .navbar {
-  width: 35px;
-  height: 40px;
-  border: solid black;
-  border-radius: 10px;
-  padding: 0 !important; /* para pisar el padding de bootstrap */
+    width: 35px;
+    height: 40px;
+    border: solid var(--color-border);
+    border-radius: 10px;
+    padding: 0 !important;
 }
 
 #menu {
- display: none;
- position: absolute;
- top: 0px;
- left: 0px;
- width: 100%;
- background: red; /* linear-gradient(90deg, rgba(153,59,241,0.5) 0%, rgba(90,194,187,0.5) 45%, rgba(205,24,104,0.5) 100%); */
- box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
- z-index: 1;
+    display: none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    background: var(--gradient-header);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    z-index: 1;
 }
 
 #menu-toggle {
-  width: 100%;
-  font-size: 12px;
-  cursor: pointer;
-  background: transparent;
-  border: none;
+    width: 100%;
+    font-size: 12px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    color: var(--color-text-primary);
 }
 
-#menu-toggle:focus {
-  outline: none;
+#menu-toggle:focus { outline: none; }
+#menu-toggle.active + #menu { display: block; }
+
+.busqueda-menu {
+    display: flex;
+    gap: 5px;
+    width: 100%;
+    position: absolute;
+    top: 100px;
+    left: 0px;
+    background: var(--gradient-header);
+    border-bottom: 1px solid var(--color-border);
 }
 
-/* #menu-toggle.active {
-  transform: rotate(90deg);
-} */
+#navbar-toggle { display: none; }
 
-#menu-toggle.active + #menu {
-  display: block;
-}
-
-.busqueda-menu{
-  display: flex;
-  gap: 5px;
-  width: 100%;
-  position: absolute;
-  top: 100px;
-  left: 0px;
-}
-  
-/* #navbar-toggle {
-    display: none;
-  }
-  
-
-  .navbar-toggle-label {
-    color: black;
-    display: block;
+.navbar-toggle-label {
+    color: var(--color-text-primary);
     cursor: pointer;
     font-size: 24px;
-    padding: 0px 3px 8px 3px;
-  }
-  
-  .navbar-menu {
-    background: linear-gradient(90deg, rgba(153,59,241,1) 0%, rgba(90,194,187,1) 45%, rgba(205,24,104,1) 100%);
+    margin: auto;
+}
+
+.navbar-menu {
     display: none;
     position: absolute;
     top: 50px;
-    left: 0;
-    width: 100%;
-    background-color: #fff;
+    background: var(--color-bg-secondary);
     padding: 10px;
-    z-index: 1;
-  }
-  
-  
-  #navbar-toggle:checked + .navbar-toggle-label + .navbar-menu {
-    display: block;
-  } */
-/* Escondemos el input checkbox */
-#navbar-toggle {
-  display: none;
+    border: 1px solid var(--color-border);
 }
 
-/* Estilizamos el botón hamburguesa */
-.navbar-toggle-label {
-  color: black;
-  cursor: pointer;
-  font-size: 24px;
-  margin: auto;
+.menu-burguer-ul {
+    display: inherit;
+    width: 100%;
+    max-width: 200px;
+    height: 100vh;
+    background: var(--gradient-header);
+    position: absolute;
+    top: 48px;
+    padding-left: 0px;
+    margin: 0;
+    border-right: 1px solid var(--color-border-accent);
 }
 
-/* Estilizamos el menú desplegable */
-.navbar-menu {
-  background: linear-gradient(90deg, rgba(153, 59, 241, 1) 0%, rgba(90, 194, 187, 1) 45%, rgba(205, 24, 104, 1) 100%);
-  display: none;
-  position: absolute;
-  top: 50px;
-  background-color: #fff;
-  padding: 10px;
-  
-}
-
-.menu-burguer-ul{
-  display: inherit;
-  width: 100%;
-  max-width: 200px;
-  height: 100vh;
-  background-image: linear-gradient(90deg, rgba(153, 59, 241, 0.9) 0%, rgba(90, 194, 187, 0.9) 45%, rgba(205, 24, 104, 0.9) 100%);
-  position: absolute;
-  top: 48px;
-  padding-left: 0px;
-  margin: 0;
-}
-
-.menu-burguer-ul li {
-  width: 100%;
-  margin-left: 0;
-  padding: 10px;
-  padding-left: 0px;
-}
+.menu-burguer-ul li { width: 100%; margin-left: 0; padding: 10px; padding-left: 0px; }
 
 .menu-burguer-ul li a {
-  width: 100%;
-  padding: 10px;
-  color: black;
-  border-left: 5px solid transparent;
-  font-family: var(--bs-body-font-family);
+    width: 100%;
+    padding: 10px;
+    color: var(--color-text-primary);
+    border-left: 5px solid transparent;
+    font-family: var(--bs-body-font-family);
+    text-decoration: none;
+    transition: color 0.2s ease;
 }
 
-.menu-burguer-ul li:hover {
-  background-image: linear-gradient(90deg, rgba(153, 59, 241, 1) 0%, rgba(90, 194, 187, 1) 45%, rgba(205, 24, 104, 1) 100%);
-}
+.menu-burguer-ul li:hover { background: rgba(0, 180, 216, 0.1); }
+.menu-burguer-ul li:hover a { border-left: 5px solid var(--color-accent); color: var(--color-accent); }
 
-.menu-burguer-ul li:hover a {
-  border-left: 5px solid rgba(90, 194, 187, 1);
-}
+#menu-toggle .bar { max-width: 25px; }
+#navbar-toggle:checked + .navbar-toggle-label + .navbar-menu { display: block; }
 
-#menu-toggle .bar {
-  max-width: 25px;
-}
-
-/* .navbar-menu ul li a {
-  color: aqua;
-  text-decoration: none;
-} */
-
-/* Mostramos el menú desplegable cuando el input está seleccionado */
-#navbar-toggle:checked+.navbar-toggle-label+.navbar-menu {
-  display: block;
-}
-
-@media (min-width : 426px) {
-  .busqueda-menu {
-    padding-bottom: 5px;
-    justify-content: center;
-  }
-}
+@media (min-width: 426px) { .busqueda-menu { padding-bottom: 5px; justify-content: center; } }

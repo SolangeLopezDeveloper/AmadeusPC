@@ -1,7 +1,40 @@
 :root {
-    --colorCeleste: #599399;
-    --colorAzul: #3846BE;
-    --colorVerde: #4DC539;
+    /* Fondos */
+    --color-bg-primary: #0d0d0d;
+    --color-bg-secondary: #141414;
+    --color-bg-card: #1a1a2e;
+    --color-bg-card-hover: #16213e;
+
+    /* Acento */
+    --color-accent: #00b4d8;
+    --color-accent-hover: #0096c7;
+    --color-accent-secondary: #6c63ff;
+
+    /* Texto */
+    --color-text-primary: #ffffff;
+    --color-text-secondary: #a0a0b0;
+    --color-text-muted: #6b6b80;
+
+    /* Bordes */
+    --color-border: #2a2a3e;
+    --color-border-accent: #00b4d8;
+
+    /* Gradientes */
+    --gradient-header: linear-gradient(135deg, #0d0d0d 0%, #1a1a2e 100%);
+    --gradient-card: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    --gradient-btn: linear-gradient(135deg, #00b4d8 0%, #6c63ff 100%);
+    --gradient-footer: linear-gradient(135deg, #0d0d0d 0%, #1a1a2e 100%);
+
+    /* Tipografía */
     --tipografiaPrincipal: "RocknRoll One";
     --tipografiaForms: 'Josefin Sans', sans-serif;
+
+    /* Sombras */
+    --shadow-card: 0 4px 20px rgba(0, 180, 216, 0.1);
+    --shadow-card-hover: 0 8px 30px rgba(0, 180, 216, 0.25);
+
+    /* Legacy - mantener compatibilidad */
+    --colorCeleste: #00b4d8;
+    --colorAzul: #6c63ff;
+    --colorVerde: #4DC539;
 }

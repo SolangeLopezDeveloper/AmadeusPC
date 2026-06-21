@@ -3,313 +3,156 @@
     padding-top: 100px;
     font-family: var(--tipografiaForms);
     text-align: center;
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    min-height: 100vh;
 }
 
-.form__main h4 {
-    width: 95%;
-    font-weight: 600;
-    margin-bottom: 10px;
-    font-size: 0.8rem;
-}
-.form--edit{
-    display: flex;
-    flex-direction: row;
-    align-content: space-around;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-}
+.form__main h4 { width: 95%; font-weight: 600; margin-bottom: 10px; font-size: 0.8rem; color: var(--color-text-secondary); }
+
+.form--edit { display: flex; flex-direction: row; align-content: space-around; flex-wrap: wrap; justify-content: space-evenly; }
+
 .form__main--titulo {
     text-transform: uppercase;
     font-family: var(--tipografiaPrincipal);
     font-size: 1.5rem;
     text-align: center;
     margin: 15px;
+    color: var(--color-text-primary);
 }
 
-.form__main .form__main--subtitulo {
-    color: var(--colorAzul);
-    text-align: center;
-    margin: 0 auto 30px;
-}
+.form__main .form__main--subtitulo { color: var(--color-accent); text-align: center; margin: 0 auto 30px; }
+.form__main--subtitulo::first-letter { text-transform: uppercase; }
 
-.form__main--subtitulo::first-letter {
-    text-transform: uppercase;
-}
-
-.form__main--registro {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-
-.form__main--registro div {
-    width: 45%;
-    margin: 10px auto;
-}
-
-.form__main--registro .form__main--registro-email, .form__main--registro .form__main--registro-direccion, .form__main--registro .form__main--registro-contrato, .form__main--registro .form__main--registro-spam {
-    width: 95%;
-}
-
-.form__main--registro .form__main--registro-codarea, .form__main--registro .form__main--registro-codpostal {
-    width: 30%;
-}
-
-.form__main--registro .form__main--registro-tel, .form__main--registro .form__main--registro-ciudad {
-    width: 60%;
-}
+.form__main--registro { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; }
+.form__main--registro div { width: 45%; margin: 10px auto; }
+.form__main--registro .form__main--registro-email,
+.form__main--registro .form__main--registro-direccion,
+.form__main--registro .form__main--registro-contrato,
+.form__main--registro .form__main--registro-spam { width: 95%; }
+.form__main--registro .form__main--registro-codarea,
+.form__main--registro .form__main--registro-codpostal { width: 30%; }
+.form__main--registro .form__main--registro-tel,
+.form__main--registro .form__main--registro-ciudad { width: 60%; }
 
 .form__main--registro div input {
     width: 100%;
     margin: 10px auto;
     border-style: none;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid var(--color-border);
     font-family: var(--tipografiaForms);
     font-size: 0.8rem;
-    
+    background: transparent;
+    color: var(--color-text-primary);
 }
 
-.form__main--registro div .checkbox {
-    width: 20px;
-    margin: 0;
-}
+.form__main--registro div .checkbox { width: 20px; margin: 0; }
 
 .form__main--registro div select {
     width: 100%;
     margin: 10px auto;
     border-style: none;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid var(--color-border);
     font-family: var(--tipografiaForms);
     font-size: 0.8rem;
-    color: grey ;
+    color: var(--color-text-muted);
+    background: var(--color-bg-secondary);
 }
 
-.form__main--registro div input:focus {
-    border-bottom: 1px solid var(--colorAzul);
-}
-
-.form__main--registro div label {
-    font-size: 9px;
-    font-weight: 600;
-}
+.form__main--registro div input:focus { border-bottom: 1px solid var(--color-accent); outline: none; }
+.form__main--registro div label { font-size: 9px; font-weight: 600; color: var(--color-text-secondary); }
 
 .form__button--siguiente {
     margin: 10px auto;
-    padding: 5px 2px;
+    padding: 8px 2px;
     font-size: 12px;
-    background: lightskyblue;
+    background: var(--gradient-btn);
     border: none;
     border-radius: 5px;
-    transition: 1s all;
+    transition: opacity 0.2s ease;
     cursor: pointer;
     text-transform: uppercase;
     width: 85%;
     letter-spacing: 1px;
+    color: white;
 }
 
-.form__button--siguiente a {
-    color: #FFF;
-    align-self: center;
-}
+.form__button--siguiente a { color: #FFF; align-self: center; }
+.form__button--siguiente:hover { opacity: 0.85; }
 
-.form__button--siguiente:hover {
-    background: linear-gradient(#dee5ff,lightskyblue);
-}
-
-.form__main h2 {
-    margin: 0;
-    font-size: 1rem;
-    width: 100%;
-    text-align: center;
-}
-
-.form__main--registro h3 a {
-    font-size: 16px;
-    font-weight: 600;
-    color: #000;
-}
+.form__main h2 { margin: 0; font-size: 1rem; width: 100%; text-align: center; color: var(--color-text-primary); }
+.form__main--registro h3 a { font-size: 16px; font-weight: 600; color: var(--color-accent); }
 
 .form__button--google {
     margin: 10px auto;
     padding: 5px;
     font-size: 1rem;
-    background: #FFF;
-    border: 1px solid #000;
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
     width: 70%;
     display: flex;
     justify-content: center;
+    border-radius: 5px;
 }
 
-.form__button--google a {
-    display: flex;
-    width: 100%;
-    color: grey;
-    font-size: 16px;
-    text-align: center;
-    align-content: center;
-}
+.form__button--google a { display: flex; width: 100%; color: var(--color-text-secondary); font-size: 16px; text-align: center; align-content: center; }
+.form__button--google img { width: 20px; }
+.form__button--google p { margin: 0 auto; align-self: center; }
+.passForget { width: 100%; text-align: center; color: var(--color-text-muted); }
 
-.form__button--google img {
-    width: 20px;
-}
+.container-form { display: flex; width: 100%; flex-wrap: wrap; align-items: center; justify-content: center; }
+.containerButons { display: flex; gap: 1px; }
 
-.form__button--google p {
-    margin: 0 auto;
-    align-self: center;
-}
+.butonEliminarProd { background-color: #c0392b; border: none; color: #fff; padding: 8px; border-radius: 4px; cursor: pointer; transition: all 0.2s ease-in-out; }
+.butonEliminarProd:hover { background-color: #922b21; }
+.butonEditarProd { background-color: var(--color-accent-secondary); border: none; color: #fff; padding: 8px; border-radius: 4px; cursor: pointer; transition: all 0.2s ease-in-out; }
+.butonVerProd { background-color: var(--color-accent); border: none; color: #fff; padding: 8px; border-radius: 4px; cursor: pointer; transition: all 0.2s ease-in-out; }
 
-.passForget {
-    width: 100%;
-    text-align: center;
-}
-.container-form{
-    display: flex;
-    width: 100%;
-    flex-wrap: wrap;
-    align-items: center;
-  
-    justify-content:center;
-}
-.containerButons{
-    display: flex;
-    gap: 1px;
-
-}
-.butonEliminarProd{
-    background-color: red;
-    border: 1px solid #000;
-    color: #fff;
-    padding: 8px 8px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-}
-.butonEliminarProd:hover{
-    background-color: #c40000;
-}
-.butonEditarProd{
-    background-color: #5a1891;
-    border: 1px solid #000;
-    color: #fff;
-    padding: 8px 8px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-} 
-.butonVerProd{
-    background-color: #2659c9;
-    border: 1px solid #000;
-    color: #fff;
-    padding: 8px 8px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-}
 .table {
     font-family: sans-serif;
     margin: 20px;
-    background-color: white;
-    border: 1px solid black;
+    background-color: var(--color-bg-card);
+    border: 1px solid var(--color-border);
     border-radius: 8px;
     font-size: 10px;
-  }
-  
-  .table th,
-  .table td {
-    padding: 6px;
-    text-align: center;
-    vertical-align: middle;
-  }
-  
-  .table thead th {
-    font-weight: bold;
-    text-transform: uppercase;
-    border-bottom: 2px solid #e0e0e0;
-  }
-  
-  .table tbody tr:not(:last-child) {
-    border-bottom: 1px solid #e0e0e0;
-  }
-  
-  .table tbody tr:hover {
-    background-color: #f2f2f2;
-  }
-  #agregar-carrito {
-    background-color: #2659c9;
+    color: var(--color-text-primary);
+}
+
+.table th, .table td { padding: 6px; text-align: center; vertical-align: middle; }
+.table thead th { font-weight: bold; text-transform: uppercase; border-bottom: 2px solid var(--color-border); color: var(--color-accent); }
+.table tbody tr:not(:last-child) { border-bottom: 1px solid var(--color-border); }
+.table tbody tr:hover { background-color: var(--color-bg-card-hover); }
+
+#agregar-carrito {
+    background: var(--gradient-btn);
     border: none;
     border-radius: 5px;
     color: white;
     padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
     display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
-  }
-  
- .is-valid{
-    color:green;
- }
- .is-invalid{
-    color: red;
- }
- .content-buttons{
-    width: 30%;
-display: flex;
-flex-direction: column;
-align-items: center;
-margin: 32px;
-padding: 32px;
- }
- .imagen-edit{
-    width: 50vh
- }
+}
+
+.is-valid { color: #4DC539; }
+.is-invalid { color: #ff4d4d; }
+
+.content-buttons { width: 30%; display: flex; flex-direction: column; align-items: center; margin: 32px; padding: 32px; }
+.imagen-edit { width: 50vh; border-radius: 8px; border: 1px solid var(--color-border); }
+
 @media (min-width: 426px) {
-    .form__main {
-        padding-top: 70px;
-    }
-
-    .form__main--registro {
-        width: 70%;
-        margin: 0 auto;
-    }
-
-    .form__button--google {
-        width: 50%;
-    }
-
-    .form__button--google img {
-        width: 30px;
-        margin-left: 20px;
-    }
-
-    .form__main--registro div label {
-        font-size: 10px;
-    }
-
-    .form__button--siguiente {
-        width: 60%;
-    }
+    .form__main { padding-top: 70px; }
+    .form__main--registro { width: 70%; margin: 0 auto; }
+    .form__button--google { width: 50%; }
+    .form__button--google img { width: 30px; margin-left: 20px; }
+    .form__main--registro div label { font-size: 10px; }
+    .form__button--siguiente { width: 60%; }
 }
 
 @media (min-width: 769px) {
-    .form__main {
-        width: 100%;
-        margin: 0 auto;
-    }
-
-    .form__main--titulo {
-      font-size: 2rem;
-      width: 100%;
-    }
-    
-    .form__main .form__main--subtitulo {
-        font-size: 1.2rem;
-    }
-
-    .form__button--google {
-        width: 70%;
-    }
+    .form__main { width: 100%; margin: 0 auto; }
+    .form__main--titulo { font-size: 2rem; width: 100%; }
+    .form__main .form__main--subtitulo { font-size: 1.2rem; }
+    .form__button--google { width: 70%; }
 }
