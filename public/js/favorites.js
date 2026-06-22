@@ -17,10 +17,11 @@ if(productos){
         const priceFormatARG = convertFormatPeso(priceWithDiscount)
         const template = `
       
-        <div class="cardsFav"><div class="d-flex" style="top:20px;rigth:10px;font-size:20px">
-        <i class="text-primary p-0 border-0 bg-transparent position-absolute fs-5 fas fa-heart" style="cursor:pointer" onclick="toggleFavorite(${id})"></i>
-       </div>
-        <img src="/images/productos/${image[0].name || 'imageNull.jpeg'}" alt="Imagen del producto" class="card-img-top">
+       <div class="cardsFav">
+    <i class="text-primary p-0 border-0 bg-transparent position-absolute fs-5 fas fa-heart" 
+       style="cursor:pointer; top:10px; left:10px; z-index:1;" 
+       onclick="toggleFavorite(${id})"></i>
+    <img src="/images/productos/${image[0].name || 'imageNull.jpeg'}" alt="Imagen del producto" class="card-img-top">
             <h5 class="card-title">${name}</h5>
             <p class="card-text">${description}</p>
             <h6 class="card-subtitle mb-2 text-muted">${priceFormatARG} ${

@@ -2,9 +2,8 @@
     padding-top: 70px;
     background-color: var(--color-bg-primary);
     min-height: 100vh;
+    color: var(--color-text-primary); /* ← título visible */
 }
-
-.cardsContainerFavs { display: flex; flex-direction: row; flex-wrap: wrap; gap: 10px; justify-content: center; }
 
 .cardsFav {
     width: 80%;
@@ -17,7 +16,12 @@
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     font-family: var(--tipografiaPrincipal);
     color: var(--color-text-primary);
+    position: relative; /* ← ancla el corazón a la card */
+    overflow: hidden;
 }
+
+.cardsContainerFavs { display: flex; flex-direction: row; flex-wrap: wrap; gap: 10px; justify-content: center; }
+
 
 .cardsFav:hover { transform: scale(1.03); box-shadow: var(--shadow-card-hover); border-color: var(--color-border-accent); }
 .cardsFav img { width: 180px; border-radius: 15px; }
