@@ -3,8 +3,8 @@
     padding-top: 70px;
     font-family: var(--tipografiaForms);
     text-align: center;
-    background-color: var(--color-bg-primary);
-    color: var(--color-text-primary);
+    background-color: #ffffff;
+    color: #222;
     min-height: 100vh;
 }
 
@@ -14,7 +14,7 @@
     font-size: 1.5rem;
     text-align: center;
     margin: 15px;
-    color: var(--color-text-primary);
+    color: #222;
 }
 
 .login--subtitulo {
@@ -42,11 +42,11 @@
     width: 100%;
     margin: 10px auto;
     border-style: none;
-    border-bottom: 1px solid var(--color-border);
+    border-bottom: 1px solid #aaa;
     font-family: var(--tipografiaForms);
     font-size: 1rem;
     background: transparent;
-    color: var(--color-text-primary);
+    color: #222;
 }
 
 .login__form div input:focus {
@@ -76,19 +76,31 @@
     font-size: 0.8rem;
     text-align: center;
     width: 100%;
-    color: var(--color-text-muted);
+    color: #555;
 }
+
+.login__form--forgetPass a {
+    color: var(--color-accent);
+    text-decoration: none;
+}
+
+.login__form--forgetPass a:hover { text-decoration: underline; }
 
 .login__form--registrarse {
     margin: 0;
     font-size: 1rem;
     width: 100%;
     text-align: center;
-    color: var(--color-text-secondary);
+    color: #333;
+}
+
+.login__form--registrarse a {
+    color: var(--color-accent);
+    text-decoration: none;
 }
 
 .login__form div label:not(.form__main__recordar--container__switch) {
-    color: var(--color-text-muted);
+    color: #aaa;
     position: absolute;
     top: 14px;
     transition: 0.5s;
@@ -118,11 +130,11 @@
     margin: 10px 25%;
     padding: 5px 2px;
     font-size: 14px;
-    color: var(--color-text-muted);
-    background: var(--color-border);
+    color: #999;
+    background: #ddd;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
+    cursor: not-allowed;
     text-transform: uppercase;
     width: 50%;
     letter-spacing: 1px;
@@ -134,7 +146,7 @@
     display: flex;
     font-weight: 500;
     margin-bottom: 16px;
-    color: var(--color-text-secondary);
+    color: #444;
 }
 
 .form__main__recordar--container__switch-input {
@@ -154,8 +166,8 @@
 }
 
 .form__main__recordar--container__switch-track {
-    background: var(--color-bg-secondary);
-    border: 1px solid var(--color-accent-secondary);
+    background: #e0e0e0;
+    border: 1px solid var(--color-accent);
     border-radius: 100px;
     cursor: pointer;
     display: flex;

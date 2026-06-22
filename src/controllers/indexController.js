@@ -34,10 +34,10 @@ module.exports = {
       where: {
         [Op.or]: [
           {
-            name: { [Op.substring]: `%${keywords}%` },
+            name: { [Op.like]: `%${keywords}%` },
           },
           {
-            description: { [Op.substring]: `%${keywords}%` },
+            description: { [Op.like]: `%${keywords}%` },
           },
         ],
       },

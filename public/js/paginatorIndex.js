@@ -18,18 +18,22 @@ const paintProductos = (productos) => {
   containerNewestCard.innerHTML = "";
   productos.forEach(({ id, image, name, description, price, usersFavorites }) => {
     const template =
-      `<div class="card col-12 col-md-4 card-item-product" style="width:300px; display: flex; justify-content: center">
-    <a href=/productos/productDetail/${id}>
-    <img src="/images/productos/${image[0].name || 'imageNull.jpeg'}" alt="Imagen del producto" class="card-img-top">
-        <h5 class="card-title">${name}</h5>
-        <p class="card-text">${description}</p>
-        <h6 class="card-subtitle mb-2 text-muted">$ ${price}</h6></a>
-        <i class="text-primary p-1 my-2 fs-4 ${usersFavorites.some(({ id }) => id === +idUser) ? 'fas' : 'far'} fa-heart" style="cursor:pointer" onclick="toggleFavorite(${id}, event)"></i>       
-        <button class="main__article_buton_cart" onclick="addProductToCart(${id})">Agregar a carrito</button>
-</div>`
+      `<div class="product-card card-item-product">
+        <a href=/productos/productDetail/${id}>
+          <div class="product-card__img">
+            <img src="/images/productos/${image[0].name || 'imageNull.jpeg'}" alt="${name}">
+          </div>
+          <div class="product-card__body">
+            <h5 class="product-card__name">${name}</h5>
+            <p class="product-card__price">$ ${price}</p>
+          </div>
+        </a>
+        <div class="product-card__actions">
+          <i class="p-1 ${usersFavorites.some(({ id }) => id === +idUser) ? 'fas' : 'far'} fa-heart product-card__fav" onclick="toggleFavorite(${id}, event)"></i>
+          <button class="product-card__btn-cart" onclick="addProductToCart(${id})">+ Carrito</button>
+        </div>
+      </div>`
     containerNewestCard.innerHTML += template;
-
-
   });
 };
 

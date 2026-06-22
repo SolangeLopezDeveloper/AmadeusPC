@@ -28,12 +28,9 @@ Estudiante de Desarrollo Web, emprendedora y mamá.
 
 - La página que elegí de inspiración fue https://www.malditohard.com.ar/ porque me gustó la estética, las imágenes que captan la atención del cliente y el menú muy variado para buscar los productos ya sea por marca, por precio, por modelo, etc. (Solange López)
 
-- La página que elegí fue https://www.instagram.com/ y https://www.facebook.com/ porque creo que con la simpleza y practicidad de su diseño logra una óptima interacción con el usuario. (Leila Silva)
 
 - Para el registro de usuario, se eligió no redireccionar a otra página interna, sino abrir el formulario en la misma página como cuadro emergente. Con un diseño simple pero completo para tomar datos de contacto como de facturación y tenerlos ya en el momento que decida realizar una compra. Si decide registrarse con cuenta de Google, deberá completar luego los datos que le falten, en la sección de editar perfil. La página de referencia que utiliza este cuadro es https://www.compragamer.com o https://www.mexx.com.ar/. Si ya tiene cuenta o decide no registrarse tiene los correspondientes botones para cerrar el cuadro o pasar al de inicio de sesión. (Matias Nuñez)
 
-- https://www.mercadolibre.com.ar : Elegí mercadolibre porque es una pagina líder , me gustó su diseño, su funcionalidad,
-todo muy bien explicado y bastante completo con variedad de opciones para navegar y lograr satifacción del cliente. (Ismael Ideme)
 
 #### Tablero de trabajo:
 

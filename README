@@ -1,0 +1,98 @@
+# 🎵 Amadeus — Tienda de Informática
+
+![App Preview](./docs/screenshot.png)
+> 📸 *Reemplazá esta imagen con una captura de pantalla de la app corriendo. Guardá la imagen en una carpeta `/docs` dentro del repo.*
+
+## 🔗 Demo
+**[Ver aplicación en vivo](#)** *(proximamente en Railway)*
+
+---
+
+## 📌 Descripción
+
+**Amadeus** es una aplicación e-commerce para la venta de productos tecnológicos y equipamiento informático. Desarrollada de forma colaborativa, incluye catálogo de productos, carrito de compras y gestión de usuarios.
+
+---
+
+## 🛠️ Tecnologías
+
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat&logo=node.js&logoColor=white)
+![Express](https://img.shields.io/badge/Express-000000?style=flat&logo=express&logoColor=white)
+![Sequelize](https://img.shields.io/badge/Sequelize-52B0E7?style=flat&logo=sequelize&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat&logo=mysql&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
+
+- **Node.js + Express** — servidor y rutas
+- **Sequelize** — ORM para base de datos
+- **MySQL** — base de datos relacional
+- **EJS** — motor de plantillas
+- **CSS3** — estilos y diseño responsive
+
+---
+
+## 🚀 Correr localmente
+
+### Requisitos
+- Node.js 18+
+- MySQL 8+
+
+```bash
+# Clonar el repositorio
+git clone https://github.com/SolangeLopezDeveloper/AmadeusPC.git
+cd AmadeusPC
+
+# Instalar dependencias
+npm install
+
+# Configurar variables de entorno
+cp .env.example .env
+# Editá el archivo .env con tus credenciales de base de datos
+```
+
+**Variables de entorno necesarias (`.env`):**
+```env
+DB_HOST=localhost
+DB_USER=tu_usuario
+DB_PASSWORD=tu_contraseña
+DB_NAME=amadeus
+PORT=3000
+```
+
+```bash
+# Ejecutar migraciones
+npx sequelize-cli db:migrate
+
+# (Opcional) Cargar datos de prueba
+npx sequelize-cli db:seed:all
+
+# Iniciar servidor
+npm start
+```
+
+La aplicación estará disponible en `http://localhost:3000`
+
+---
+
+## 📁 Estructura del proyecto
+
+```
+AmadeusPC/
+├── amadeus/         # Configuración Sequelize (migrations, seeders, models)
+├── public/          # Recursos estáticos (CSS, imágenes)
+├── src/
+│   ├── controllers/ # Lógica de negocio
+│   ├── models/      # Modelos Sequelize
+│   ├── routes/      # Rutas Express
+│   └── views/       # Templates EJS
+├── .sequelizerc
+└── package.json
+```
+
+---
+
+## 👩‍💻 Desarrollado por
+
+**Solange López** y equipo — [GitHub](https://github.com/SolangeLopezDeveloper)
+
+> Proyecto colaborativo — fork de [Grupo_5_Amadeus](https://github.com/Figue92/Grupo_5_Amadeus)

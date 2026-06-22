@@ -3,86 +3,58 @@
     background: var(--gradient-footer);
     border-top: 1px solid var(--color-border-accent);
     border-bottom: none;
-    padding: 20px 0;
+    padding: 30px 0;
     line-height: 1.5;
     color: var(--color-text-primary);
+    font-size: 0.9rem;
 }
 
-.footer * { margin: 0; }
+.footer * { 
+    margin: 0; 
+    box-sizing: border-box;
+}
 
-.footer__section {
+/* --- SECCIÓN REDES SOCIALES --- */
+.footer__section--redes {
     width: 90%;
-    margin: 0 auto;
+    margin: 0 auto 25px auto;
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
-    align-content: center;
     align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 20px;
 }
 
 .footer__section--titulo {
     text-transform: uppercase;
-    margin: 0 auto;
-    align-content: center;
     font-weight: bold;
-    line-height: 1.15;
-    font-size: 1.5em;
+    line-height: 1.2;
+    font-size: 1.35rem;
     text-align: center;
     color: var(--color-text-primary);
     letter-spacing: 2px;
 }
 
 .footer__section__nav--redes {
-    margin: 20px auto;
+    margin-top: 15px;
     width: 100%;
-    padding: 0 30%;
+    max-width: 320px;
     display: flex;
     justify-content: space-around;
+    gap: 10px;
 }
 
-.footer__section--qr { width: 20%; order: 1; margin-top: 10px; }
-
-.footer__section--article {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-wrap: wrap;
-    line-height: 1.15;
+.footer__redes-link i {
+    font-size: 24px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-.footer__section--article nav { text-align: center; }
-
-.footer__section--article a {
-    display: block;
-    margin: 5px auto;
-    color: var(--color-text-secondary);
-    text-decoration: none;
-    transition: color 0.2s ease;
+.footer__redes-link:hover i {
+    transform: scale(1.1);
+    opacity: 0.9;
 }
 
-.footer__section--article a:hover { color: var(--color-accent); }
-
-.footer__section--article h3 {
-    text-transform: uppercase;
-    color: var(--color-text-primary);
-    margin: 10px auto;
-    font-size: 1.17em;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
-
-.footer__section--article p {
-    margin: 3px auto;
-    color: var(--color-text-secondary);
-}
-
-.footer__section--nav { display: none; }
-.article--informacion:hover .footer__section--nav { display: block; }
-.article--contactanos p { display: none; }
-.article--contactanos:hover p { display: block; }
-.article--ventatel h3 + p { font-weight: bold; }
-
+/* Colores de redes */
 .fa-square-facebook { color: #3b5998; }
 .fa-twitter { color: #55acee; }
 .fa-instagram { color: #bc2a8d; }
@@ -90,7 +62,68 @@
 .fa-discord { color: #7289da; }
 .fa-twitch { color: #6441a5; }
 
-/* Botón agregar al carrito */
+/* --- CONTENEDOR DE INFORMACIÓN --- */
+.footer__info-container {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 25px;
+}
+
+.footer__section--qr { 
+    width: 70px; 
+    height: auto;
+    object-fit: contain;
+}
+
+.footer__section--article {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer__section--article h3 {
+    text-transform: uppercase;
+    color: var(--color-text-primary);
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.footer__section--article p {
+    margin-bottom: 4px;
+    color: var(--color-text-secondary);
+    font-size: 0.8rem;
+}
+
+.footer__section--nav {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.footer__section--article a {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: color 0.2s ease;
+}
+
+.footer__section--article a:hover { 
+    color: var(--color-accent); 
+}
+
+.article--ventatel__numero {
+    font-weight: bold;
+    color: var(--color-text-primary) !important;
+}
+
+/* --- EXTRA: ESTILOS BOTÓN CARRITO DEL PORTFOLIO --- */
 .card-item-product:hover .main__article_buton_cart { display: block; }
 
 .main__article_buton_cart {
@@ -111,24 +144,45 @@
 
 .main__article_buton_cart:hover { opacity: 0.85; }
 
-@media (min-width: 426px) {
-    .footer__section { flex-direction: row; justify-content: space-between; }
-    .footer__section--qr { order: 0; }
-    .footer__section--article { width: 40%; }
-    .article--horarios { margin-left: 20%; align-self: flex-start; }
-    .article--ventatel { align-self: flex-start; }
-    .footer__section--nav { display: block; }
-    .article--contactanos p { display: block; }
-    .footer__section__nav--redes i { font-size: 30px; }
+/* --- RESPONSIVE DESIGN --- */
+
+/* Tablets de tamaño mediano */
+@media (min-width: 600px) {
+    .footer__info-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        text-align: left;
+        gap: 20px;
+    }
+
+    .footer__section--qr {
+        order: 0;
+    }
+
+    .footer__section--article {
+        width: 43%;
+        align-items: flex-start;
+    }
 }
 
-@media (min-width: 768px) {
-    .footer__section { width: 95%; line-height: 1.5; }
-    .footer__section--qr { width: 10%; }
-    .footer__section--article { width: 20%; }
-    .article--horarios { margin-left: 0; }
-}
+/* Pantallas de Escritorio (Desktop) */
+@media (min-width: 992px) {
+    .footer__info-container {
+        width: 85%;
+        max-width: 1200px;
+        flex-wrap: nowrap;
+        gap: 15px;
+    }
 
-@media (min-width: 768px) {
-    .footer__section--qr { width: 5%; }
+    .footer__section--qr {
+        width: 65px;
+    }
+
+    .footer__section--article {
+        width: auto;
+        flex: 1;
+        padding: 0 10px;
+    }
 }

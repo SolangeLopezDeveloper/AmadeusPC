@@ -1,61 +1,73 @@
 <header class="header">
-    <section class="header__section">
-        <span class="header__section--logo">
-            <a href="/"><img src="/images/Amadeus PC.jpg" alt="Logo Amadeus"></a>
-        </span>
-        <nav class="header__section__nav--redes">
-            <a href=""><i class="fa-brands fa-instagram"></i></a>
-            <a href=""><i class="fa-brands fa-square-facebook"></i></a>
-            <a href=""><i class="fa-brands fa-whatsapp"></i></a>
+    <div class="header__inner">
+        <!-- Logo -->
+        <a href="/" class="header__logo">
+            <img src="/images/Amadeus PC.jpg" alt="Logo Amadeus">
+            <span class="header__logo--text">AMADEUS</span>
+        </a>
+
+        <!-- Nav principal -->
+        <nav class="header__nav">
+            <a href="/productos/productos" class="header__nav--link">Productos</a>
+            <% if (locals.userLogin) { %>
+                <a href="/users/favorites" class="header__nav--link"><i class="fa-solid fa-heart"></i> Favoritos</a>
+                <% if (locals.userLogin.rol === 1) { %>
+                    <a href="/productos/add" class="header__nav--link">Vender</a>
+                    <a href="/dashboard" class="header__nav--link">Dashboard</a>
+                <% } %>
+            <% } %>
         </nav>
-        <nav class="header__section__nav--registro">
-            <ul class="header__section__nav--registro-header">
 
-                <li><a class="header__section__armado-pc header__section__nav--registro--texto"
-                        href="/productos/productos">Productos</a></li>
-                <% if (locals.userLogin) { %>
-                    <li><a class="header__section__nav--registro--icono" href="/users/profile"><i
-                                class="fa-solid fa-user"></i></a><a class="header__section__nav--registro--texto"
-                            href="/users/profile">Hola, <%= locals.userLogin.name %></a></li>
-                    <li>
-                        <a class="header__section__nav--registro--texto" href="/users/favorites"><i
-                                class="fa-solid fa-heart"></i> Favoritos</a>
-                    </li>
-                    <% if (locals.userLogin.rol===1) { %>
-                        <li><a class="header__section__nav--registro--icono" href="/productos/add"><i
-                                    class="fa-solid fa-hand-holding-dollar"></i></a><a
-                                class="header__section__nav--registro--texto" href="/productos/add">vender</a></li>
-                        <li><a class="header__section__nav--registro--icono" href="/dashboard"><i
-                                    class="fa-solid fa-table-columns"></i></a><a
-                                class="header__section__nav--registro--texto" href="/dashboard">Dashboard</a></li>
-                        <li><a class="header__section__nav--registro--texto" target="_blank"
-                                href="http://localhost:5173"><i class="fa-solid fa-atom"></i> Dashboard React</a>
-                        </li>
+        <!-- Buscador -->
+        <!-- <form class="header__search" action="/search" method="GET">
+            <input type="text" name="keywords" placeholder="¿Qué estás buscando?" value="<%= locals.keywords || '' %>">
+            <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form> -->
 
-                        <% } %>
+        <!-- Acciones -->
+        <div class="header__actions">
+            <a href="" class="header__action--icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="" class="header__action--icon" aria-label="Facebook"><i class="fa-brands fa-square-facebook"></i></a>
+            <a href="" class="header__action--icon" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
 
-                            <li><a class="header__section__nav--registro--icono" href="/users/logout"><i
-                                        class="fa-solid fa-right-from-bracket"></i></a><a
-                                    class="header__section__nav--registro--texto" href="/users/logout">Cerrar Sesión</a>
-                            </li>
-                            <% } else { %>
+            <% if (locals.userLogin) { %>
+                <a href="/users/profile" class="header__action--icon" title="Mi perfil"><i class="fa-solid fa-user"></i></a>
+                <a href="/users/logout" class="header__action--icon" title="Cerrar sesión"><i class="fa-solid fa-right-from-bracket"></i></a>
+            <% } else { %>
+                <a href="/users/register" class="header__action--btn">Registrate</a>
+                <a href="/users/login" class="header__action--btn header__action--btn-primary">Ingresar</a>
+            <% } %>
 
-                                <li><a class="header__section__nav--registro--icono" href="/users/register"><i
-                                            class="fa-solid fa-user-plus"></i></a><a
-                                        class="header__section__nav--registro--texto"
-                                        href="/users/register">Registrate</a></li>
-                                <li><a class="header__section__nav--registro--icono" href="/users/login"><i
-                                            class="fa-solid fa-right-to-bracket"></i></a><a
-                                        class="header__section__nav--registro--texto" href="/users/login">Ingresa</a>
-                                </li>
-                                <% } %>
-                                    <li><a class="header__section__nav--registro--icono" href="/productos/cart"><i
-                                                class="fa-solid fa-cart-shopping"></i></a></li>
-                                    
-            </ul>
-            
-        </nav>
-        
-    </section>
-    <%- include('../partials/burguermenu-search.ejs') %>
+            <a href="/productos/cart" class="header__action--icon" aria-label="Carrito">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </a>
+        </div>
+
+        <!-- Burguer mobile -->
+        <button class="header__burguer" id="burguer-toggle" aria-label="Menú">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+
+    <!-- Menú mobile -->
+    <nav class="header__mobile-menu" id="mobile-menu">
+        <a href="/productos/productos">Productos</a>
+        <% if (locals.userLogin) { %>
+            <a href="/users/profile">Mi perfil</a>
+            <a href="/users/favorites">Favoritos</a>
+            <% if (locals.userLogin.rol === 1) { %>
+                <a href="/productos/add">Vender</a>
+                <a href="/dashboard">Dashboard</a>
+            <% } %>
+            <a href="/users/logout">Cerrar sesión</a>
+        <% } else { %>
+            <a href="/users/register">Registrate</a>
+            <a href="/users/login">Ingresar</a>
+        <% } %>
+        <a href="/productos/cart"><i class="fa-solid fa-cart-shopping"></i> Carrito</a>
+        <form class="header__search header__search--mobile" action="/search" method="GET">
+            <input type="text" name="keywords" placeholder="Buscar...">
+            <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+    </nav>
 </header>

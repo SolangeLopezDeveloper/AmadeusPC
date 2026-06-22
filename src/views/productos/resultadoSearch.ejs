@@ -3,45 +3,75 @@
 
 <%- include('../partials/head.ejs', {otherScript: include('../partials/scripts.ejs',{view:'Home'})}) %>
 
-    <body>
-        <%- include('../partials/header.ejs') %>
+<body>
+    <%- include('../partials/header.ejs') %>
 
-            <main class="main__productos">
+    <main class="main__productos">
 
-                    <section class="main__section__productos">
-                        <h1 class="title__todosProductos my-5" id="titulo">Resultados de la búsqueda:</h1>
-                        <div class="paginator"> <%- include('../partials/paginator.ejs') %></div>
-                        <div class="container" class="container-productos">
-                            <div id="container-productos-card"
-                                class="container-productos-card container row justify-content-center justify-content-md-between" style="margin:0">
+        <section class="main__section__productos">
+            <h1 class="title__todosProductos my-5" id="titulo">Resultados de la búsqueda:</h1>
+            <div class="paginator"><%- include('../partials/paginator.ejs') %></div>
+
+            <div class="container-productos">
+                <div id="container-productos-card"
+                    class="container row justify-content-center justify-content-md-between"
+                    style="margin:0">
+
+                    <% if (productos && productos.length > 0) { %>
+                        <% productos.forEach(function(producto) { %>
+                            <div class="card col-12 col-md-4 card-item-product"
+                                style="width:300px; display:flex; justify-content:center">
+                                <a href="/productos/productDetail/<%= producto.id %>">
+                                    <img src="/images/productos/<%= producto.image[0]?.name || 'imageNull.jpeg' %>"
+                                        alt="<%= producto.name %>"
+                                        class="card-img-top">
+                                    <h5 class="card-title"><%= producto.name %></h5>
+                                    <p class="card-text"><%= producto.description %></p>
+                                    <h6 class="card-subtitle mb-2 text-muted">$ <%= producto.price %></h6>
+                                </a>
+                                <i class="text-primary p-1 my-2 fs-4 far fa-heart"
+                                    style="cursor:pointer"
+                                    data-id="<%= producto.id %>"
+                                    onclick="toggleFavorite(this.dataset.id, event)"></i>
+                                <button class="main__article_buton_cart"
+                                    data-id="<%= producto.id %>"
+                                    onclick="addProductToCart(this.dataset.id)">
+                                    Agregar a carrito
+                                </button>
                             </div>
-                        </div>
-                        <div class="paginator"> <%- include('../partials/paginator.ejs') %></div>
-                    </section>
+                        <% }) %>
+                    <% } else { %>
+                        <p class="text-center w-100">No se encontraron productos para "<%= keywords %>".</p>
+                    <% } %>
 
-                    <section class="main__section__compra">
-                        <i class="fa-regular fa-credit-card"></i>
-                        <h4>Pagá hasta en 12 cuotas</h4>
-                        <i class="fa-sharp fa-solid fa-truck"></i>
-                        <h4>Recibí tu producto</h4>
-                        <i class="fa-solid fa-shield-halved"></i>
-                        <h4>Compra 100% Segura</h4>
-                    </section>
-                    <section class="main__section__marcas">
-                        <h2>Las Mejores Marcas están en AMADEUS</h2>
+                </div>
+            </div>
 
-                        <%- include('../partials/carreteMarcas.ejs') %>
+            <div class="paginator"><%- include('../partials/paginator.ejs') %></div>
+        </section>
 
+        <section class="main__section__compra">
+            <i class="fa-regular fa-credit-card"></i>
+            <h4>Pagá hasta en 12 cuotas</h4>
+            <i class="fa-sharp fa-solid fa-truck"></i>
+            <h4>Recibí tu producto</h4>
+            <i class="fa-solid fa-shield-halved"></i>
+            <h4>Compra 100% Segura</h4>
+        </section>
 
-                    </section>
+        <section class="main__section__marcas">
+            <h2>Las Mejores Marcas están en AMADEUS</h2>
+            <%- include('../partials/carreteMarcas.ejs') %>
+        </section>
 
+    </main>
 
-            </main>
-            <%- include('../partials/assistant.ejs') %>
-            <%- include('../partials/footer.ejs') %>
-                <script src="/js/carreteMarcas.js"></script>
-                <script src="/js/searchResult.js"></script>
-                
-    </body>
+    <%- include('../partials/assistant.ejs') %>
+    <%- include('../partials/footer.ejs') %>
+
+    <script src="/js/carreteMarcas.js"></script>
+    <script src="/js/searchResult.js"></script>
+
+</body>
 
 </html>
