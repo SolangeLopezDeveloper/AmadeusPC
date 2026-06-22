@@ -9,7 +9,7 @@ passport.deserializeUser((user, done) => done(null, user));
 
 
 router.get('/login/google', passport.authenticate('google'))
-router.get('/google/callback', passport.authenticate('google',{failureRedirect: "/users/login"}),loginGoogle);
+router.get('/login/google/callback', passport.authenticate('google', { failureRedirect: "/users/login" }), loginGoogle);
 
 
 module.exports = router;
